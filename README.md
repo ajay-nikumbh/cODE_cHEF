@@ -1,6 +1,6 @@
 |  Count  | \[Day 1\]                                                                           | Time | Space | Yt Link |
 | -- | ---------------------------------------------------------------------------------------- | -----| ------| --------|
-| 1  | [https://www.codechef.com/problems/FCTRL](https://www.codechef.com/problems/FCTRL)       |
+| 1  | [https://www.codechef.com/problems/FCTRL](https://www.codechef.com/problems/FCTRL)       | O(n) | O(1) 
 | 2  | [https://www.codechef.com/problems/CIELAB](https://www.codechef.com/problems/CIELAB)     |
 | 3  | [https://www.codechef.com/problems/HORSES](https://www.codechef.com/problems/HORSES)     |
 | 4  | [https://www.codechef.com/problems/JOHNY](https://www.codechef.com/problems/JOHNY)       |
