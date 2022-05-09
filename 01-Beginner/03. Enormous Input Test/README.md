@@ -1,50 +1,44 @@
-3. https://practice.geeksforgeeks.org/problems/level-order-traversal-in-spiral-form/1/?page=4&difficulty[]=-2&difficulty[]=-1&difficulty[]=0&category[]=Tree&sortBy=submissions
+3. https://www.codechef.com/problems/INTEST
 
 ```cpp
-vector<int> findSpiral(Node *root)
-{
-    //Your code here
-    vector<int> v;
-    int level=0;
-    if(root==NULL)
-	{
-        return v;
-    }
-    queue<Node*> q;
-    q.push(root);
-    
-	while(!q.empty())
-	{
-        int size=q.size(); 
-        vector<int> temp;
-        for(int i=0;i<size;i++)
-		{
-            Node* r=q.front();
-            q.pop();
-            temp.push_back(r->data);
-            
-			if(r->left)
-			{
-                q.push(r->left);
-            }
-            
-			if(r->right)
-			{
-                q.push(r->right);
-            }
-        }
-        if(level%2==0)
-		{
-            reverse(temp.begin(),temp.end());
-        }
-        
-		for(int i=0;i<temp.size();i++)
-		{
-            v.push_back(temp[i]);
-        }
-        level++;
-    }
-    return v;
-}
 
+// Note that this problem is for testing fast input-output.
+// We can use scanf, printf in C langauge, which are quite fast in general :)
+#include <bits/stdc++.h> 
+
+using namespace std;
+
+// Usually, you can use scanf/printf in C++.
+// However, if you want to use cin/cout, it is usually slow.
+// To make it faster. Use cin.tie(NULL) and set ios_base::sync_with_stdio(false)
+// See the below code for details.
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+
+	// Read the input n, k
+	int n, k;
+	cin >> n >> k;
+
+	// ans denotes number of integers n divisible by k
+	int ans = 0;
+
+	for (int i = 0; i < n; i++) 
+	{
+		int t;
+		cin >> t;
+		
+		if (t % k == 0) 
+		{
+			ans++;
+		}		
+	}
+
+	// Print the ans.
+	cout << ans << "\n";	
+		
+	return 0;
+}
 ```
