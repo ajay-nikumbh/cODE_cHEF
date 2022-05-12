@@ -1,50 +1,29 @@
-3. https://practice.geeksforgeeks.org/problems/level-order-traversal-in-spiral-form/1/?page=4&difficulty[]=-2&difficulty[]=-1&difficulty[]=0&category[]=Tree&sortBy=submissions
+12. https://www.codechef.com/problems/FCTRL2
 
 ```cpp
-vector<int> findSpiral(Node *root)
+#include <bits/stdc++.h>
+#include <boost/multiprecision/cpp_int.hpp>
+#include <iostream>
+using namespace std;
+using namespace boost::multiprecision;
+
+int main()
 {
-    //Your code here
-    vector<int> v;
-    int level=0;
-    if(root==NULL)
+	// your code goes here
+	int t;
+	cin>>t;
+
+	while(t--)
 	{
-        return v;
-    }
-    queue<Node*> q;
-    q.push(root);
-    
-	while(!q.empty())
-	{
-        int size=q.size(); 
-        vector<int> temp;
-        for(int i=0;i<size;i++)
-		{
-            Node* r=q.front();
-            q.pop();
-            temp.push_back(r->data);
-            
-			if(r->left)
-			{
-                q.push(r->left);
-            }
-            
-			if(r->right)
-			{
-                q.push(r->right);
-            }
-        }
-        if(level%2==0)
-		{
-            reverse(temp.begin(),temp.end());
-        }
-        
-		for(int i=0;i<temp.size();i++)
-		{
-            v.push_back(temp[i]);
-        }
-        level++;
-    }
-    return v;
+	    int n;
+	    cin>>n;
+	    cpp_int fact=1;
+	    for(int i=n;i>0;i--)
+	     fact=fact*i;
+	    cout<<fact<<endl; 
+	}
+	
+	return 0;
 }
 
 ```
