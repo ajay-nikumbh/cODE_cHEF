@@ -1,50 +1,48 @@
-3. https://practice.geeksforgeeks.org/problems/level-order-traversal-in-spiral-form/1/?page=4&difficulty[]=-2&difficulty[]=-1&difficulty[]=0&category[]=Tree&sortBy=submissions
+17. https://www.codechef.com/problems/TLG
 
 ```cpp
-vector<int> findSpiral(Node *root)
+#include <iostream>
+using namespace std;
+
+int main() 
 {
-    //Your code here
-    vector<int> v;
-    int level=0;
-    if(root==NULL)
+	// your code goes here
+	int n;
+	cin>>n;
+	int sum1=0,sum2=0;
+	int winner,lead=0;
+	int diff=0;
+	
+	for(int i=0;i<n;i++)
 	{
-        return v;
-    }
-    queue<Node*> q;
-    q.push(root);
-    
-	while(!q.empty())
-	{
-        int size=q.size(); 
-        vector<int> temp;
-        for(int i=0;i<size;i++)
+	    int p1,p2;
+	    cin>>p1>>p2;
+	    sum1 = sum1+p1;
+	    sum2 = sum2+p2;
+	
+	    if(sum1>sum2)
+	    {
+	        diff  = sum1-sum2;
+	        if(diff>lead)
 		{
-            Node* r=q.front();
-            q.pop();
-            temp.push_back(r->data);
-            
-			if(r->left)
-			{
-                q.push(r->left);
-            }
-            
-			if(r->right)
-			{
-                q.push(r->right);
-            }
-        }
-        if(level%2==0)
+	            lead = diff;
+	            winner =1;
+	        }
+	    }
+	    
+	    else
+	    {
+	        diff = sum2-sum1;
+	    
+	    	if(diff>lead)
 		{
-            reverse(temp.begin(),temp.end());
-        }
-        
-		for(int i=0;i<temp.size();i++)
-		{
-            v.push_back(temp[i]);
-        }
-        level++;
-    }
-    return v;
+	            lead = diff;
+	            winner = 2;
+	        }
+	    }
+	}
+	cout<<winner<<" "<<lead;
+	return 0;
 }
 
 ```
