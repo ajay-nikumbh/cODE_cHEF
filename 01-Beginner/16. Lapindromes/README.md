@@ -1,50 +1,71 @@
-3. https://practice.geeksforgeeks.org/problems/level-order-traversal-in-spiral-form/1/?page=4&difficulty[]=-2&difficulty[]=-1&difficulty[]=0&category[]=Tree&sortBy=submissions
+16. https://www.codechef.com/problems/LAPIN
 
 ```cpp
-vector<int> findSpiral(Node *root)
-{
-    //Your code here
-    vector<int> v;
-    int level=0;
-    if(root==NULL)
-	{
-        return v;
-    }
-    queue<Node*> q;
-    q.push(root);
-    
-	while(!q.empty())
-	{
-        int size=q.size(); 
-        vector<int> temp;
-        for(int i=0;i<size;i++)
-		{
-            Node* r=q.front();
-            q.pop();
-            temp.push_back(r->data);
-            
-			if(r->left)
-			{
-                q.push(r->left);
-            }
-            
-			if(r->right)
-			{
-                q.push(r->right);
-            }
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        string s;
+        cin>>s;
+        string first, second;
+        int n = s.length();
+        for(int i=0;i<n/2;i++)
+        {
+            first+=s[i];
+            second+=s[n-i-1];
         }
-        if(level%2==0)
-		{
-            reverse(temp.begin(),temp.end());
-        }
+        sort(first.begin(), first.end());
+        sort(second.begin(), second.end());
         
-		for(int i=0;i<temp.size();i++)
-		{
-            v.push_back(temp[i]);
+        if(first == second)
+        {
+            cout<<"YES\n";
         }
-        level++;
+        else
+        {
+            cout<<"NO\n";
+        }
     }
-    return v;
 }
+```
 
+```cpp
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while (t--)
+    {
+        string s,s1="",s2="";
+        cin>>s;
+        int l=s.length();
+        if(l%2==0)
+        {
+            s1=s.substr(0,l/2);
+            s2=s.substr(l/2,l);
+        }
+        else
+        {
+            s1=s.substr(0,l/2);
+            s2=s.substr((l/2)+1,l);
+        }
+        sort(s1.begin(),s1.end());
+        sort(s2.begin(),s2.end());
+        if(s1==s2)
+        {
+        cout<<"YES"<<"\n";
+        }
+        else
+        {
+        cout<<"NO"<<"\n";
+        }
+    }
+    return 0;
+}
 ```
