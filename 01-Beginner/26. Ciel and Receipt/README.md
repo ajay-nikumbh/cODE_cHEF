@@ -27,3 +27,65 @@ int main()
 }
 
 ```
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int arr[12] = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048};
+        sort(arr, arr + 12, greater<int>());
+        ll p;
+        cin >> p;
+        ll ans = 0;
+        for (int i = 0; i < 12; i++)
+        {
+            if (p / arr[i] != 0)
+            {
+                p -= arr[i];
+                i--;
+                ans++;
+            }
+        }
+        cout << ans << endl;
+    }
+    return 0;
+}
+
+```
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+
+int t;
+cin>>t;
+while(t--)
+{
+	int k;
+	cin>>k;
+	int i=11;
+	int x=0;
+	while(i>=0)
+	{
+		x+=k/(int)(pow(2,i));
+		k=k% (int)(pow(2,i));
+		i--;
+	}
+	cout<<x<<endl;
+}
+
+
+
+return 0;
+}
+
+```
