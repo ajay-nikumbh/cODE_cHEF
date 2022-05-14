@@ -1,50 +1,29 @@
-3. https://practice.geeksforgeeks.org/problems/level-order-traversal-in-spiral-form/1/?page=4&difficulty[]=-2&difficulty[]=-1&difficulty[]=0&category[]=Tree&sortBy=submissions
+26. https://www.codechef.com/problems/CIELRCPT
 
 ```cpp
-vector<int> findSpiral(Node *root)
+#include <iostream>
+using namespace std;
+
+int main()
 {
-    //Your code here
-    vector<int> v;
-    int level=0;
-    if(root==NULL)
+	// your code goes here
+	int t,n;
+	cin>>t;
+	while(t--)
 	{
-        return v;
-    }
-    queue<Node*> q;
-    q.push(root);
-    
-	while(!q.empty())
-	{
-        int size=q.size(); 
-        vector<int> temp;
-        for(int i=0;i<size;i++)
-		{
-            Node* r=q.front();
-            q.pop();
-            temp.push_back(r->data);
-            
-			if(r->left)
-			{
-                q.push(r->left);
-            }
-            
-			if(r->right)
-			{
-                q.push(r->right);
-            }
-        }
-        if(level%2==0)
-		{
-            reverse(temp.begin(),temp.end());
-        }
+	     cin>>n;
+	     int arr[]={2048,  1024, 512,  256,  128,  64, 32, 16, 8,  4,  2,  1};
+      	     int c=0;
         
-		for(int i=0;i<temp.size();i++)
-		{
-            v.push_back(temp[i]);
-        }
-        level++;
-    }
-    return v;
+	     for (int i = 0; i < 12; i++)
+       	     {
+		c=c+n/arr[i];
+		n=n-n/arr[i]*arr[i];
+	     }
+      cout<<c<<endl;
+      
+   }
+   return 0;
 }
 
 ```
